@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="125" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x"/>
+	<item value="false" key="LexicalSortingAction.sort"/>
+	<item value="0" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
+	<item value="6" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
+	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space_tab_page.node"/>
+	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
+	<item value="2" key="formatter_page.modify_dialog_tab_page.last_focus_index"/>
+	<item value="3" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
+	<item value="${workspace_loc:/${ProjName}/Drivers}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="true" key="org.eclipse.cdt.ui.codeformatter.create_profile_dialog.open_edit"/>
+	<item value="true" key="org.eclipse.cdt.ui.formatter_page.show_invisible_characters"/>
+	<item value="1117" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
+	<item value="728" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height"/>
+	<item value="50" key="org.eclipse.cdt.ui.codeformatter.line_wrapping_tab_page.preview_line_width"/>
+	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
+		<item value="726" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="438" key="DIALOG_HEIGHT"/>
+		<item value="492" key="DIALOG_X_ORIGIN"/>
+		<item value="80" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="283" key="size.height"/>
+		<item value="714" key="size.width"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="PDOMSearchPage">
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="0" key="askReindex.detail"/>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+</section>

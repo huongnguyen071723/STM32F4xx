@@ -1,0 +1,246 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/huong/\+One\+Drive/\+Documents/\+M\+C\+U2/6.Timer2\+\_\+\+Output\+\_\+compare/\+Core/\+Src/main.c File Reference}
+\label{main_8c}\index{C:/Users/huong/OneDrive/Documents/MCU2/6.Timer2\_Output\_compare/Core/Src/main.c@{C:/Users/huong/OneDrive/Documents/MCU2/6.Timer2\_Output\_compare/Core/Src/main.c}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}~0
+\item 
+\#define \mbox{\hyperlink{main_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{T\+R\+UE}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a5a21aa31f16f1da6496de7c2e67b58b1}{System\+Clock\+Config}} (uint8\+\_\+t clock\+\_\+seq)
+\item 
+void \mbox{\hyperlink{main_8c_a0ec6694f72d6eca454284cd3ab6df205}{U\+A\+R\+T2\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialization the U\+A\+R\+T2 peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a881ee94b49e0f712eb80554a5700e3f5}{Error\+\_\+handler}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a19f27ac326a9614efa6749a917672e6b}{T\+I\+M2\+\_\+\+Init}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a825a38d3f87d03f011520ff66261fe74}{G\+P\+I\+O\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialized the G\+P\+IO A to toggle the L\+ED. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a51af30a60f9f02777c6396b8247e356f}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}{huart2}}
+\item 
+char \mbox{\hyperlink{main_8c_a9b46001dfed0eb57d813331fbd75b483}{temp\+\_\+rev}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8c_a445f90c9f9fddf9cee0d7ee6b700f449}{number\+\_\+char\+\_\+receive}} = 0
+\item 
+char \mbox{\hyperlink{main_8c_a6624b1819381c765fd9562312347bab6}{buffer\+\_\+receive}} \mbox{[}100\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_abe0e3d34cd2464d53a7f5841274ad15d}{receive\+\_\+finish}} = \mbox{\hyperlink{main_8c_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}
+\item 
+char $\ast$ \mbox{\hyperlink{main_8c_aa3a66c89fad94e567a4ab89138dcffb9}{user\+\_\+data}} = \char`\"{}The user data\+: timer\textbackslash{}r\textbackslash{}n\char`\"{}
+\item 
+G\+P\+I\+O\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{main_8c_a7273162442678926fd5de0806e0748ce}{igpio}}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_ae0a72e088b5277f4626e44e5752cfb93}{htime2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_aa93f0eb578d23995850d61f7d61c55c1}\label{main_8c_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{main.c@{main.c}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define F\+A\+L\+SE~0}
+
+
+
+Definition at line 10 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_aa8cecfc5c5c054d2875c03e77b7be15d}\label{main_8c_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{main.c@{main.c}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define T\+R\+UE~1}
+
+
+
+Definition at line 11 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a881ee94b49e0f712eb80554a5700e3f5}\label{main_8c_a881ee94b49e0f712eb80554a5700e3f5}} 
+\index{main.c@{main.c}!Error\_handler@{Error\_handler}}
+\index{Error\_handler@{Error\_handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_handler()}{Error\_handler()}}
+{\footnotesize\ttfamily void Error\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 86 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a825a38d3f87d03f011520ff66261fe74}\label{main_8c_a825a38d3f87d03f011520ff66261fe74}} 
+\index{main.c@{main.c}!GPIO\_Init@{GPIO\_Init}}
+\index{GPIO\_Init@{GPIO\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_Init()}{GPIO\_Init()}}
+{\footnotesize\ttfamily void G\+P\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialized the G\+P\+IO A to toggle the L\+ED. 
+
+Select the output mode for the pin of M\+CU
+
+Select the pin number
+
+Select the speed
+
+Select the
+
+Definition at line 211 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a51af30a60f9f02777c6396b8247e356f}\label{main_8c_a51af30a60f9f02777c6396b8247e356f}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+the variable to handle the timer 6(basic timer)
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a5a21aa31f16f1da6496de7c2e67b58b1}\label{main_8c_a5a21aa31f16f1da6496de7c2e67b58b1}} 
+\index{main.c@{main.c}!SystemClockConfig@{SystemClockConfig}}
+\index{SystemClockConfig@{SystemClockConfig}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClockConfig()}{SystemClockConfig()}}
+{\footnotesize\ttfamily void System\+Clock\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{clock\+\_\+seq }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a19f27ac326a9614efa6749a917672e6b}\label{main_8c_a19f27ac326a9614efa6749a917672e6b}} 
+\index{main.c@{main.c}!TIM2\_Init@{TIM2\_Init}}
+\index{TIM2\_Init@{TIM2\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TIM2\_Init()}{TIM2\_Init()}}
+{\footnotesize\ttfamily void T\+I\+M2\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Select the toggle output mode
+
+Definition at line 183 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a0ec6694f72d6eca454284cd3ab6df205}\label{main_8c_a0ec6694f72d6eca454284cd3ab6df205}} 
+\index{main.c@{main.c}!UART2\_Init@{UART2\_Init}}
+\index{UART2\_Init@{UART2\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{UART2\_Init()}{UART2\_Init()}}
+{\footnotesize\ttfamily void U\+A\+R\+T2\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialization the U\+A\+R\+T2 peripheral. 
+
+This is the base address of U\+S\+A\+R\+T2
+
+the baud rate of the transfer
+
+Use 8-\/bit word length or 9-\/bit word length
+
+Use the parity or not?
+
+The initialization is not okie
+
+Definition at line 68 of file main.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a6624b1819381c765fd9562312347bab6}\label{main_8c_a6624b1819381c765fd9562312347bab6}} 
+\index{main.c@{main.c}!buffer\_receive@{buffer\_receive}}
+\index{buffer\_receive@{buffer\_receive}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_receive}{buffer\_receive}}
+{\footnotesize\ttfamily char buffer\+\_\+receive\mbox{[}100\mbox{]}}
+
+
+
+Definition at line 24 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_ae0a72e088b5277f4626e44e5752cfb93}\label{main_8c_ae0a72e088b5277f4626e44e5752cfb93}} 
+\index{main.c@{main.c}!htime2@{htime2}}
+\index{htime2@{htime2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htime2}{htime2}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htime2}
+
+The variable for T\+I\+M\+ER purpose 
+
+Definition at line 32 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}} 
+\index{main.c@{main.c}!huart2@{huart2}}
+\index{huart2@{huart2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{huart2}{huart2}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def huart2}
+
+
+
+Definition at line 21 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a7273162442678926fd5de0806e0748ce}\label{main_8c_a7273162442678926fd5de0806e0748ce}} 
+\index{main.c@{main.c}!igpio@{igpio}}
+\index{igpio@{igpio}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{igpio}{igpio}}
+{\footnotesize\ttfamily G\+P\+I\+O\+\_\+\+Init\+Type\+Def igpio}
+
+G\+P\+IO port A variable 
+
+Definition at line 29 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a445f90c9f9fddf9cee0d7ee6b700f449}\label{main_8c_a445f90c9f9fddf9cee0d7ee6b700f449}} 
+\index{main.c@{main.c}!number\_char\_receive@{number\_char\_receive}}
+\index{number\_char\_receive@{number\_char\_receive}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{number\_char\_receive}{number\_char\_receive}}
+{\footnotesize\ttfamily uint16\+\_\+t number\+\_\+char\+\_\+receive = 0}
+
+
+
+Definition at line 23 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_abe0e3d34cd2464d53a7f5841274ad15d}\label{main_8c_abe0e3d34cd2464d53a7f5841274ad15d}} 
+\index{main.c@{main.c}!receive\_finish@{receive\_finish}}
+\index{receive\_finish@{receive\_finish}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{receive\_finish}{receive\_finish}}
+{\footnotesize\ttfamily char receive\+\_\+finish = \mbox{\hyperlink{main_8c_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}}
+
+
+
+Definition at line 25 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a9b46001dfed0eb57d813331fbd75b483}\label{main_8c_a9b46001dfed0eb57d813331fbd75b483}} 
+\index{main.c@{main.c}!temp\_rev@{temp\_rev}}
+\index{temp\_rev@{temp\_rev}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{temp\_rev}{temp\_rev}}
+{\footnotesize\ttfamily char temp\+\_\+rev}
+
+
+
+Definition at line 22 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_aa3a66c89fad94e567a4ab89138dcffb9}\label{main_8c_aa3a66c89fad94e567a4ab89138dcffb9}} 
+\index{main.c@{main.c}!user\_data@{user\_data}}
+\index{user\_data@{user\_data}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{user\_data}{user\_data}}
+{\footnotesize\ttfamily char$\ast$ user\+\_\+data = \char`\"{}The user data\+: timer\textbackslash{}r\textbackslash{}n\char`\"{}}
+
+
+
+Definition at line 26 of file main.\+c.
+

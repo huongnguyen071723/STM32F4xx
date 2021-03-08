@@ -1,0 +1,6 @@
+18:13:25 **** Incremental Build of configuration Debug for project 5.Basic_Timer ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+18:13:25 Build Finished (took 369ms)
+

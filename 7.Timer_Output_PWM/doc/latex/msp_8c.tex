@@ -1,0 +1,117 @@
+\hypertarget{msp_8c}{}\doxysection{C\+:/\+Users/huong/\+One\+Drive/\+Documents/\+M\+C\+U2/6.Timer2\+\_\+\+Output\+\_\+compare/\+Core/\+Src/msp.c File Reference}
+\label{msp_8c}\index{C:/Users/huong/OneDrive/Documents/MCU2/6.Timer2\_Output\_compare/Core/Src/msp.c@{C:/Users/huong/OneDrive/Documents/MCU2/6.Timer2\_Output\_compare/Core/Src/msp.c}}
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}{H\+A\+L\+\_\+\+Msp\+Init}} (void)
+\item 
+void \mbox{\hyperlink{msp_8c_a0e553b32211877322f949b14801bbfa7}{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT M\+SP Init. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{msp_8c_a818f4d5d1e2f417438d281b4ac9efb9c}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Base\+\_\+\+Msp\+Init}} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Initializes the T\+IM Base M\+SP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{msp_8c_ab7ea7555b79c4544ad90dc6d063d2f13}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+O\+C\+\_\+\+Msp\+Init}} (T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Initializes the T\+IM Output Compare M\+SP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}\label{msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}} 
+\index{msp.c@{msp.c}!HAL\_MspInit@{HAL\_MspInit}}
+\index{HAL\_MspInit@{HAL\_MspInit}!msp.c@{msp.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_MspInit()}{HAL\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file msp.\+c.
+
+\mbox{\Hypertarget{msp_8c_a818f4d5d1e2f417438d281b4ac9efb9c}\label{msp_8c_a818f4d5d1e2f417438d281b4ac9efb9c}} 
+\index{msp.c@{msp.c}!HAL\_TIM\_Base\_MspInit@{HAL\_TIM\_Base\_MspInit}}
+\index{HAL\_TIM\_Base\_MspInit@{HAL\_TIM\_Base\_MspInit}!msp.c@{msp.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_Base\_MspInit()}{HAL\_TIM\_Base\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Base\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Initializes the T\+IM Base M\+SP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & T\+IM Base handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 63 of file msp.\+c.
+
+\mbox{\Hypertarget{msp_8c_ab7ea7555b79c4544ad90dc6d063d2f13}\label{msp_8c_ab7ea7555b79c4544ad90dc6d063d2f13}} 
+\index{msp.c@{msp.c}!HAL\_TIM\_OC\_MspInit@{HAL\_TIM\_OC\_MspInit}}
+\index{HAL\_TIM\_OC\_MspInit@{HAL\_TIM\_OC\_MspInit}!msp.c@{msp.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_OC\_MspInit()}{HAL\_TIM\_OC\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+O\+C\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{T\+I\+M\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
+
+
+
+Initializes the T\+IM Output Compare M\+SP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & T\+IM Output Compare handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Enable the clock for G\+P\+IO port A
+
+Configure the alternate function for P\+A0 -\/ channel 1
+
+Configure the alternate function for P\+A1 -\/ channel 2
+
+Configure the alternate function for P\+A2 -\/ channel 3
+
+Configure the alternate function for P\+A3 -\/ channel 4
+
+Definition at line 78 of file msp.\+c.
+
+\mbox{\Hypertarget{msp_8c_a0e553b32211877322f949b14801bbfa7}\label{msp_8c_a0e553b32211877322f949b14801bbfa7}} 
+\index{msp.c@{msp.c}!HAL\_UART\_MspInit@{HAL\_UART\_MspInit}}
+\index{HAL\_UART\_MspInit@{HAL\_UART\_MspInit}!msp.c@{msp.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_MspInit()}{HAL\_UART\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+U\+A\+RT M\+SP Init. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to a U\+A\+R\+T\+\_\+\+Handle\+Type\+Def structure that contains the configuration information for the specified U\+A\+RT module. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & \\
+\hline
+\end{DoxyRetVals}
+Enable the U\+S\+A\+RT 2 peripheral
+
+Enable the G\+P\+IO port A peripheral
+
+Enable the G\+P\+IO port D peripheral
+
+Initialized the U\+A\+R\+T2\+: TX by using G\+P\+IO port D
+
+Initialized the U\+A\+R\+T2\+: RX by using G\+P\+IO port D
+
+Enable the Interrupt for U\+S\+A\+R\+T2 peripheral
+
+Definition at line 32 of file msp.\+c.
+

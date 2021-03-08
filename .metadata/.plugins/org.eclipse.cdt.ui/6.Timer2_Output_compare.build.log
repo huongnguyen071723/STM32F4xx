@@ -1,0 +1,43 @@
+20:32:25 **** Programming project 6.Timer2_Output_compare on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.23.0.201904120827\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.2554495915351094755.cfg -s "C:\\Users\\huong\\OneDrive\\Documents\\MCU2\\6.Timer2_Output_compare" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.5.0.201904120827\\resources\\openocd\\st_scripts" -c "program Release/6.Timer2_Output_compare.elf verify reset " -c shutdown 
+Open On-Chip Debugger 0.10.0+dev-00021-g524e8c8 (2019-04-12-08:48)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 8000 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 8000 kHz
+Info : STLINK v2.1 JTAG v37 API v2 M26 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 2.931900
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : STM32F407VGTx.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001e78 msp: 0x20020000
+configuring PLL
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10076413
+Info : flash size = 1024kbytes
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20020000
+wrote 16384 bytes from file Release/6.Timer2_Output_compare.elf in 0.701608s (22.805 KiB/s)
+** Programming Finished **
+** Verify Started **
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+verified 8088 bytes in 0.171141s (46.152 KiB/s)
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+
+20:32:26 Build Finished (took 1s.229ms)
+

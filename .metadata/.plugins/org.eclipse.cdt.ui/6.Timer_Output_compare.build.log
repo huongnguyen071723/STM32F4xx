@@ -1,0 +1,23 @@
+19:41:11 **** Incremental Build of configuration Release for project 6.Timer_Output_compare ****
+make -j4 all 
+Building file: ../Core/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\huong\OneDrive\Documents\MCU2\6.Timer_Output_compare\Release
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DUSE_HAL_DRIVER -DSTM32F407xx -I../USB_HOST/App -I../USB_HOST/Target -I"C:/Users/huong/OneDrive/Documents/MCU2/6.Timer_Output_compare/Core/Inc" -I"C:/Users/huong/OneDrive/Documents/MCU2/6.Timer_Output_compare/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/huong/OneDrive/Documents/MCU2/6.Timer_Output_compare/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I../Middlewares/ST/STM32_USB_Host_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc -I"C:/Users/huong/OneDrive/Documents/MCU2/6.Timer_Output_compare/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/huong/OneDrive/Documents/MCU2/6.Timer_Output_compare/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" -o "Core/Src/main.o" "../Core/Src/main.c"
+Finished building: ../Core/Src/main.c
+ 
+Building target: 6.Timer_Output_compare.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F407VGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "6.Timer_Output_compare.elf" @"objects.list"   -lm
+Finished building target: 6.Timer_Output_compare.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "6.Timer_Output_compare.elf" "6.Timer_Output_compare.hex"
+arm-none-eabi-size "6.Timer_Output_compare.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8072	     24	   1824	   9920	   26c0	6.Timer_Output_compare.elf
+ 
+
+19:41:14 Build Finished (took 2s.319ms)
+
