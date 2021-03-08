@@ -211,7 +211,7 @@ void TIM2_Init() {
     }
 
     /*Setting the output capture for channel*/
-    ichannelConfig.OCMode = TIM_OCMODE_TOGGLE; /*! Select the toggle output mode*/
+    ichannelConfig.OCMode = TIM_OCMODE_PWM1; /*! Select the PWM output mode*/
     ichannelConfig.Pulse = 25000U;
     ichannelConfig.OCPolarity = TIM_OCPOLARITY_HIGH;
 
