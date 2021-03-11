@@ -12,27 +12,27 @@
 
 void SystemClockConfig(void);
 void UART2_Init();
+void DMA_Init();
 void Error_handler();
 
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma;
 char temp_rev; /*To save one char received from PC with Interrupt*/
 uint16_t number_char_receive = 0;
 char buffer_receive[100];
 char receive_finish = FALSE;
 
-char * user_data = "The user data: IRQ\r\n";
+char * user_data = "The user data: DMA\r\n";
 
 int main() {
-
-    char temp;
-
     HAL_Init();
 
     SystemClockConfig();
 
+    DMA_Init();
     UART2_Init();
     uint16_t string_length = strlen(user_data);
-    if(HAL_UART_Transmit(&huart2, (uint8_t *)user_data, string_length, HAL_MAX_DELAY) != HAL_OK){
+    if(HAL_UART_Transmit_DMA(&huart2, (uint8_t *)user_data, string_length) != HAL_OK){
         Error_handler();
     }
 
@@ -67,10 +67,35 @@ void UART2_Init() {
     huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     huart2.Init.Mode = UART_MODE_TX_RX;
 
+    huart2.hdmatx = &hdma;
+    huart2.hdmarx = &hdma;
     if (HAL_UART_Init(&huart2) != HAL_OK) {
         Error_handler(); /*! The initialization is not okie*/
     }
 }/*UART2_Init*/
+
+/**
+ * @fn          DMA_Init
+ * @brief       Initialized the DMA peripheral
+ */
+void DMA_Init(){
+    __HAL_RCC_DMA1_CLK_ENABLE();/*Enable the clock for DMA1*/
+
+    hdma.Instance = DMA1_Stream6;
+    hdma.StreamBaseAddress = DMA1_Stream6_BASE;
+    hdma.Init.Channel = DMA_CHANNEL_4;
+    hdma.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma.Init.MemInc = DMA_MINC_ENABLE;
+    hdma.Init.Mode = DMA_NORMAL;
+    hdma.State = HAL_DMA_STATE_READY;
+    hdma.Parent = &huart2; /*DMA transfer data from SRAM to USART2*/
+
+    /*Initialized the DMA for USART2_TX*/
+    if(HAL_DMA_Init(&hdma) != HAL_OK){
+        Error_handler();
+    }
+}
 
 /**
   * @brief  Rx Transfer completed callbacks.
