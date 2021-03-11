@@ -50,19 +50,19 @@ int main() {
         Error_handler();
     }
 
-    if(HAL_TIM_OC_Start_IT(&htime2, TIM_CHANNEL_1) != HAL_OK){
+    if(HAL_TIM_PWM_Start(&htime2, TIM_CHANNEL_1) != HAL_OK){
        Error_handler();
     }
 
-    if(HAL_TIM_OC_Start_IT(&htime2, TIM_CHANNEL_2) != HAL_OK){
+    if(HAL_TIM_PWM_Start(&htime2, TIM_CHANNEL_2) != HAL_OK){
        Error_handler();
     }
 
-    if(HAL_TIM_OC_Start_IT(&htime2, TIM_CHANNEL_3) != HAL_OK){
+    if(HAL_TIM_PWM_Start(&htime2, TIM_CHANNEL_3) != HAL_OK){
        Error_handler();
     }
 
-    if(HAL_TIM_OC_Start_IT(&htime2, TIM_CHANNEL_4) != HAL_OK){
+    if(HAL_TIM_PWM_Start(&htime2, TIM_CHANNEL_4) != HAL_OK){
        Error_handler();
     }
 
@@ -154,7 +154,8 @@ void SystemClockConfig(uint8_t clock_seq) {
 static void settingClockfromPLL(RCC_OscInitTypeDef * osc_int, uint8_t clock_seq, uint8_t * latency){
 
     switch(clock_seq){
-        case SYS_CLK_50MHZ:{
+        case SYS_CLK_50MHZ:
+        {
             /*Calculator the PLL output*/
             osc_int->PLL.PLLM = 16;/*the HSI is 16MHz, divide by 16 -> 1MHz*/
             osc_int->PLL.PLLN = 100; /*1MHz multiple by 100 -> 100MHz*/
@@ -163,7 +164,8 @@ static void settingClockfromPLL(RCC_OscInitTypeDef * osc_int, uint8_t clock_seq,
             *latency = FLASH_ACR_LATENCY_1WS;
             break;
         }
-        case SYS_CLK_84MHZ:{
+        case SYS_CLK_84MHZ:
+        {
             /*Calculator the PLL output*/
             osc_int->PLL.PLLM = 16;/*the HSI is 16MHz, divide by 16 -> 1MHz*/
             osc_int->PLL.PLLN = 168; /*1MHz multiple by 168 -> 168MHz*/
@@ -172,7 +174,8 @@ static void settingClockfromPLL(RCC_OscInitTypeDef * osc_int, uint8_t clock_seq,
             *latency = FLASH_ACR_LATENCY_2WS;
             break;
         }
-        case SYS_CLK_120MHZ:{
+        case SYS_CLK_120MHZ:
+        {
             /*Calculator the PLL output*/
             osc_int->PLL.PLLM = 16;/*the HSI is 16MHz, divide by 16 -> 1MHz*/
             osc_int->PLL.PLLN = 240; /*1MHz multiple by 240 -> 240MHz*/
@@ -181,7 +184,8 @@ static void settingClockfromPLL(RCC_OscInitTypeDef * osc_int, uint8_t clock_seq,
             *latency = FLASH_ACR_LATENCY_3WS;
             break;
         }
-        default:{
+        default:
+        {
             break;
         }
     }
@@ -195,42 +199,42 @@ static void settingClockfromPLL(RCC_OscInitTypeDef * osc_int, uint8_t clock_seq,
  * @retval  void
  */
 void TIM2_Init() {
-    TIM_OC_InitTypeDef ichannelConfig;
+    TIM_OC_InitTypeDef ichannelConfig;/*! To configure the output compare as PWM*/
     memset(&htime2, 0U, sizeof(TIM_HandleTypeDef));
     memset(&ichannelConfig, 0U, sizeof(TIM_OC_InitTypeDef));
 
     htime2.Instance = TIM2;/*The address of timer 2*/
-    htime2.Init.Prescaler = 0; /*the prescaler for clock of timer 2*/
+    htime2.Init.Prescaler = 48; /*the prescaler for clock of timer 2*/
     htime2.Init.CounterMode = TIM_COUNTERMODE_UP;/*Default: the counter mode of timer 2 is TIM_COUNTERMODE_UP*/
-    htime2.Init.Period = 0xFFFFFFFF;
+    htime2.Init.Period = 5000;
     htime2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
 
     /*Initialized the timer 2*/
-    if(HAL_TIM_OC_Init(&htime2) != HAL_OK){
+    if(HAL_TIM_PWM_Init(&htime2) != HAL_OK){
         Error_handler();
     }
 
     /*Setting the output capture for channel*/
     ichannelConfig.OCMode = TIM_OCMODE_PWM1; /*! Select the PWM output mode*/
-    ichannelConfig.Pulse = 25000U;
+    ichannelConfig.Pulse = (htime2.Init.Period * 40U)/100U;
     ichannelConfig.OCPolarity = TIM_OCPOLARITY_HIGH;
 
-    if(HAL_TIM_OC_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_1) != HAL_OK){
+    if(HAL_TIM_PWM_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_1) != HAL_OK){
         Error_handler();
     }
 
-    ichannelConfig.Pulse = 12500U;
-    if(HAL_TIM_OC_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_2) != HAL_OK){
+    ichannelConfig.Pulse = (htime2.Init.Period * 50U)/100U;
+    if(HAL_TIM_PWM_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_2) != HAL_OK){
         Error_handler();
     }
 
-    ichannelConfig.Pulse = 6250U;
-    if(HAL_TIM_OC_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_3) != HAL_OK){
+    ichannelConfig.Pulse = (htime2.Init.Period * 60U)/100U;
+    if(HAL_TIM_PWM_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_3) != HAL_OK){
         Error_handler();
     }
 
-    ichannelConfig.Pulse = 3125U;
-    if(HAL_TIM_OC_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_4) != HAL_OK){
+    ichannelConfig.Pulse = (htime2.Init.Period * 70U)/100U;
+    if(HAL_TIM_PWM_ConfigChannel(&htime2, &ichannelConfig, TIM_CHANNEL_4) != HAL_OK){
         Error_handler();
     }
 }/*TIM2_Init*/
